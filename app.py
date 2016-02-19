@@ -16,3 +16,5 @@ f = theano.function(
         inputs = [x, y],
         outputs = z)
 print(f(3, 999) + f(5, 999) - f(15, 999))
+theano.printing.pydotprint(z, outfile="./symbolic_graph.unopt.png", var_with_name_simple=True)
+theano.printing.pydotprint(f, outfile="./symbolic_graph_opt.png", var_with_name_simple=True)
